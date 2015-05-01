@@ -18,7 +18,7 @@ game.GameTimerManager = Object.extend({
             game.data.gold += (game.data.exp1 + 1);
             console.log("Current gold:" + game.data.gold);
         }
-    },
+    },//checks when is the right time to give you gold
     creepTimerCheck: function() {
         if (Math.round(this.now / 1000) % 10 === 0 && (this.now - this.lastCreep >= 1000)) {
             this.lastCreep = this.now;

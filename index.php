@@ -53,7 +53,7 @@ require_once ("php/controller/create-db.php");
         
         <!-- Plugin(s) -->
         <script type="text/javascript" src="lib/plugins/debugPanel.js"></script>
-        
+        <!--regular scripts-->
         <!-- Game Scripts -->
         <script type="text/javascript" src="js/game.js"></script>
         <script type="text/javascript" src="js/resources.js"></script>
@@ -64,7 +64,6 @@ require_once ("php/controller/create-db.php");
         <script type="text/javascript" src="js/entities/EnemyCreep.js"></script>
         <script type="text/javascript" src="js/entities/HUD.js"></script>
         <script type="text/javascript" src="js/entities/SpearThrow.js"></script>
-        <script type="text/javascript" src="js/entities/MiniMap.js"></script>
         <!--Game Managers-->
         <script type="text/javascript" src="js/gamemanagers/GameManager.js"></script>
         <script type="text/javascript" src="js/gamemanagers/GameTimerManager.js"></script>
@@ -90,13 +89,11 @@ require_once ("php/controller/create-db.php");
                         window.scroll(0, 0);
                         return false;
                     }, false);
-
                     // Scroll away mobile GUI
                     (function() {
                         window.scrollTo(0, 1);
                         me.video.onresize(null);
                     }).defer();
-
                     me.event.subscribe(me.event.WINDOW_ONRESIZE, function(e) {
                         window.scrollTo(0, 1);
                     });
@@ -118,6 +115,7 @@ require_once ("php/controller/create-db.php");
                 },
                 dataType: "text"
             })
+            //a regular form,baez made a whole file for a form and it seemed better
                .success(function(response){
                    if(response === "true"){
                        me.state.change(me.state.PLAY);

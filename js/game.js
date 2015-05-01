@@ -1,4 +1,3 @@
-
 /* Game namespace */
 var game = {
     // an object where to store game information
@@ -35,11 +34,11 @@ var game = {
         exp2: 0,
         exp3: 0,
         exp4: 0,
+        //global variables
         win: "",
         pausePos: "",
         buyscreen: "",
-        buytext:"",
-        minimap:""
+        buytext:""
     },
     // Run on page load.
     "onload": function() {
@@ -85,9 +84,9 @@ var game = {
         me.pool.register("HeroDeathManager", game.HeroDeathManager);
         me.pool.register("ExperienceManager", game.ExperienceManager);
         me.pool.register("SpendGold", game.SpendGold);
-        me.pool.register("spear", game.SpearThrow, true);
-        me.pool.register("minimap", game.MiniMap, true);
-        
+        me.pool.register("spear", game.SpearThrow);
+        //where we register everything
+
         me.state.set(me.state.MENU, new game.TitleScreen());
         me.state.set(me.state.PLAY, new game.PlayScreen());
         me.state.set(me.state.SPENDEXP, new game.SpendExp());

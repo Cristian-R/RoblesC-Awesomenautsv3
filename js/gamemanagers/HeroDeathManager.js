@@ -2,7 +2,7 @@ game.HeroDeathManager = Object.extend({
     init: function (x, y, settings){
         this.alwaysUpdate = true;
     },
-    
+    //just checks for deaths
     update: function (){
            if (game.data.player.dead) {
            this.removePlayer();

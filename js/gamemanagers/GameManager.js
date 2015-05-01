@@ -7,10 +7,10 @@ game.ExperienceManager = Object.extend({
   update: function(){
       if(game.data.win === true && !this.gameover){
           this.gameOver(true);
-          
+          //checks when game is over
       }else if(game.data.win === false && !this.gameover){
          this.gameOver(false);
-         
+         //
          session_destroy();
          
       }
@@ -24,7 +24,12 @@ game.ExperienceManager = Object.extend({
          game.data.exp += 10; 
       }else{
           game.data.exp += 1;
-      }
+      }//adds exp 
+      //if (you win the game){
+     //      you will get 10 exp 
+    //      }else if{
+   //           you will only get one if you lose
+  //        };//larrimore this is the language you know best :)
           console.log(game.data.exp);
           
           this.gameover = true;
@@ -44,7 +49,7 @@ game.ExperienceManager = Object.extend({
                     exp4: game.data.exp4
                 },
                 dataType: "text"
-            })
+            })//saves exp
                .success(function(response){
                    if(response === "true"){
                        me.state.change(me.state.MENU);
@@ -59,5 +64,4 @@ game.ExperienceManager = Object.extend({
        
     }
 });
-
 

@@ -13,7 +13,6 @@ game.SpearThrow = me.Entity.extend({
             }]);
 
         
-        
         this.alwaysUpdate = true;
         this.body.setVelocity(8, 0);
         this.attack = game.data.ability3*3;
@@ -40,6 +39,5 @@ game.SpearThrow = me.Entity.extend({
                 response.b.loseHealth(this.attack);
                 me.game.world.removeChild(this);
             }
-            
   }
 });

@@ -7,7 +7,7 @@ game.SpendGold = Object.extend({
         this.updateWhenPaused = true;
         this.buying = false;
     },
-    
+    //makes sure you lose gold when you spend it
     update: function(){
         this.now = new Date().getTime();
         
@@ -43,7 +43,7 @@ game.SpendGold = Object.extend({
         me.input.bindKey(me.input.KEY.F5, "F5", true);
         me.input.bindKey(me.input.KEY.F6, "F6", true);
         this.setBuyText();
-        
+        //start buying!!!
      },
     
     setBuyText: function(){
@@ -63,7 +63,7 @@ game.SpendGold = Object.extend({
                         this.font.draw(renderer.getContext(), "Q Ability: Speed Burst. Current Level: " + game.data.ability1 + " Cost: " + ((game.data.ability1+1)*10), this.pos.x, this.pos.y + 160);
                         this.font.draw(renderer.getContext(), "W Ability: Eat Your Creep For Health: " + game.data.ability2 + " Cost: " + ((game.data.ability2+1)*10), this.pos.x, this.pos.y + 200);
                         this.font.draw(renderer.getContext(), "E Ability: Throw Your Spear: " + game.data.ability3 + " Cost: " + ((game.data.ability3+1)*10), this.pos.x, this.pos.y + 240);
-                    }
+                    }//sets the coordinates on wher to place things
                 }));
                 me.game.world.addChild(game.data.buytext, 35);
     },
@@ -80,6 +80,7 @@ game.SpendGold = Object.extend({
         me.input.unbindKey(me.input.KEY.F5, "F5", true);
         me.input.unbindKey(me.input.KEY.F6, "F6", true);
         me.game.world.removeChild(game.data.buytext);
+        //
     },
     
     checkBuyKeys: function(){
@@ -155,4 +156,3 @@ game.SpendGold = Object.extend({
     }
     
 });
-

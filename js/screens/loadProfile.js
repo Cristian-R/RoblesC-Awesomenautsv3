@@ -6,13 +6,13 @@ game.LoadProfile = me.ScreenObject.extend({
         me.game.world.addChild(new me.Sprite(0, 0, me.loader.getImage("load-screen")), -10); // TODO
         document.getElementById("input").style.visibility = "visible";
         document.getElementById("load").style.visibility = "visible";
-        
+        //below makes it so that the keys will work
         me.input.unbindKey(me.input.KEY.B);
         me.input.unbindKey(me.input.KEY.Q);
         me.input.unbindKey(me.input.KEY.E);
         me.input.unbindKey(me.input.KEY.W);
         me.input.unbindKey(me.input.KEY.A);
-
+//
         me.game.world.addChild(new (me.Renderable.extend({
             
             init: function() {
@@ -21,6 +21,7 @@ game.LoadProfile = me.ScreenObject.extend({
             },
             
             draw: function(renderer) {
+                //text for "Enter Username And Password"
                 this.font.draw(renderer.getContext(), "Enter Username And Password", this.pos.x, this.pos.y);
             }
             
