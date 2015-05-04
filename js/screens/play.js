@@ -22,6 +22,9 @@ game.PlayScreen = me.ScreenObject.extend({
         var spendGold = me.pool.pull("SpendGold", 0, 0, {});
         me.game.world.addChild(spendGold, 0);
         
+        game.data.minimap = me.pool.pull("minimap", 10, 10, {});
+        me.game.world.addChild(game.data.minimap, 30);
+        
         
         //bindkeys so that the game will work
         me.input.bindKey(me.input.KEY.B, "buy");
@@ -42,12 +45,14 @@ game.PlayScreen = me.ScreenObject.extend({
      */
     onDestroyEvent: function() {
         // remove the HUD from the game world
-        me.game.world.removeChild(this.HUD);
+          me.game.world.removeChild(this.HUD);
     },
     resetPlayer: function(x, y){
           game.data.player = me.pool.pull("player", x, y, {});
           //resets player on the world :0
           me.game.world.addChild(game.data.player, 6);
+          game.data.miniPlayer = me.pool.pull("miniPlayer", 10, 10, {});
+          me.game.world.addChild(game.data.miniPlayer, 51);
     }
     
 });

@@ -21,6 +21,7 @@ var game = {
         gameTimerManager: "",
         heroDeathManager: "",
         spearTimer: 15,
+        speedbursttimer: 4,
         player: "",
         exp: 0,
         gold: 0,
@@ -80,11 +81,15 @@ var game = {
         me.pool.register("PlayerBase", game.PlayerBaseEntity, true);
         me.pool.register("EnemyBase", game.EnemyBaseEntity, true);
         me.pool.register("EnemyCreep", game.EnemyCreep, true);
+        me.pool.register("FreindlyCreep", game.FreindlyCreep, true);
         me.pool.register("GameTimerManager", game.GameTimerManager);
         me.pool.register("HeroDeathManager", game.HeroDeathManager);
         me.pool.register("ExperienceManager", game.ExperienceManager);
+        me.pool.register("minimap", game.MiniMap, true);
+        me.pool.register("miniplayer", game.MiniPlayerLocation, true);
         me.pool.register("SpendGold", game.SpendGold);
         me.pool.register("spear", game.SpearThrow);
+        
         //where we register everything
 
         me.state.set(me.state.MENU, new game.TitleScreen());

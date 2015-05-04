@@ -113,13 +113,21 @@ game.PlayerEntity = me.Entity.extend({
     
     checkAbilityKeys: function (){
         if(me.input.isKeyPressed("skill1")){
-            //this.speedBurst();
+            this.speedBurst();
         }else if(me.input.isKeyPressed("skill2")){
             //this.eatCreep();
         }else if(me.input.isKeyPressed("skill3")){
             this.throwSpear();
         }
     },
+    
+    speedBurst: function(){
+         if((this.now-this.lastSpear) >= game.data.speedbursttimer*1000 && game.data.ability1 > 0){
+            (game.data.playerMoveSpeed)*4;
+    }
+        
+    },
+           
     
     throwSpear: function(){
         if((this.now-this.lastSpear) >= game.data.spearTimer*1000 && game.data.ability3 > 0){
