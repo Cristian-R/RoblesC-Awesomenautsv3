@@ -122,8 +122,8 @@ game.PlayerEntity = me.Entity.extend({
     },
     
     speedBurst: function(){
-         if((this.now-this.lastSpear) >= game.data.speedbursttimer*1000 && game.data.ability1 > 0){
-            (game.data.playerMoveSpeed)*4;
+         if (game.data.speedbursttimer*1000){
+            ((game.data.playerMoveSpeed)*4);
     }
         
     },
